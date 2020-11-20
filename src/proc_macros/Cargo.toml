@@ -1,0 +1,19 @@
+[lib]
+proc-macro = true
+path = "mod.rs"
+
+[package]
+name = "dyn_safe-proc_macros"
+version = "0.0.1"
+authors = ["Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>"]
+edition = "2018"
+
+license = "Zlib OR MIT OR Apache-2.0"
+
+description = "`::dyn_safe`'s internal crate."
+
+documentation = "https://docs.rs/dyn_safe"
+repository = "https://github.com/danielhenrymantilla/dyn_safe.rs"
+homepage = "https://crates.io/crates/dyn_safe"
+
+readme = "../../README.md"

@@ -104,7 +104,7 @@ fn dyn_safe_impl (attrs: TS, input: TS)
         Some(TT::Punct(p)) if p.as_char() == '#'
     )
     {
-        todo!("attributes");
+        prefix.extend(input.by_ref().take(2));
     }
     if matches!(input.peek(),
         Some(TT::Ident(unsafe_)) if unsafe_.to_string() == "unsafe"

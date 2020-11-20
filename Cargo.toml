@@ -1,6 +1,6 @@
 [package]
 name = "dyn_safe"
-version = "0.0.1"  # Keep in sync (& also with `src/proc_macros/Cargo.toml`)
+version = "0.0.2"  # Keep in sync (& also with `src/proc_macros/Cargo.toml`)
 authors = ["Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>"]
 edition = "2018"
 
@@ -25,7 +25,7 @@ categories = [
 ]
 
 [dependencies.proc_macros]
-version = "0.0.1"  # Keep in sync (& also with `src/proc_macros/Cargo.toml`)
+version = "0.0.2"  # Keep in sync (& also with `src/proc_macros/Cargo.toml`)
 path = "src/proc_macros"
 package = "dyn_safe-proc_macros"
 

@@ -17,7 +17,7 @@ fn dyn_safe (attrs: TS, input: TS) -> TS
 {
     match dyn_safe_impl(attrs, input) {
         | Ok(it) => {
-            println!("{}", it.to_string());
+            // println!("{}", it.to_string());
             it
         },
         | Err((

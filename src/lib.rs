@@ -40,8 +40,20 @@
         # }
 
         #[dyn_safe(true)]
-        trait Foo {
+        pub trait Foo {
             fn whoops ();
+        }
+        ```
+
+        ```rust
+        # use ::dyn_safe::dyn_safe; macro_rules! ignore {($($t:tt)*) => ()} ignore! {
+        #[macro_use]
+        extern crate dyn_safe;
+        # }
+
+        #[dyn_safe(false)]
+        pub trait Foo {
+            fn ok ();
         }
         ```
 
@@ -52,11 +64,25 @@
         # }
 
         #[dyn_safe(false)]
-        trait Foo {
+        pub trait Foo {
             // …
         }
 
         let _: dyn Foo; // Whoops
+        ```
+
+        ```rust
+        # use ::dyn_safe::dyn_safe; macro_rules! ignore {($($t:tt)*) => ()} ignore! {
+        #[macro_use]
+        extern crate dyn_safe;
+        # }
+
+        #[dyn_safe(true)]
+        pub trait Foo {
+            // …
+        }
+
+        let _: dyn Foo; // Ok
         ```
 */
 

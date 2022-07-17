@@ -107,6 +107,18 @@ fn dyn_safe_impl (attrs: TS, input: TS)
         prefix.extend(input.by_ref().take(2));
     }
     if matches!(input.peek(),
+        Some(TT::Ident(pub_)) if pub_.to_string() == "pub"
+    )
+    {
+        prefix.push(input.next().unwrap());
+        if matches!(input.peek(),
+            Some(TT::Group(g)) if g.delimiter() == Delimiter::Parenthesis
+        )
+        {
+            prefix.push(input.next().unwrap());
+        }
+    }
+    if matches!(input.peek(),
         Some(TT::Ident(unsafe_)) if unsafe_.to_string() == "unsafe"
     )
     {
